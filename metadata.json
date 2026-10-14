@@ -1,0 +1,6 @@
+{
+  "name": "7LayerX: BGP Messages & Neighbor States",
+  "description": "Interactive editorial engineering visualizer and deep dive into Border Gateway Protocol (RFC 4271) messages, neighbor finite state machine, and packet structures.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

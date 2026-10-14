@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-base: #080B0C;
+    --surface-main: #101516;
+    --surface-raised: #151C1D;
+    --border-subtle: #283231;
+    --text-main: #EEF2EF;
+    --text-muted: #98A5A2;
+    --lime-signal: #D2F27C;
+    --lime-dim: #A6C955;
+    --coral-warn: #EF8A78;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-main);
+  }
+
+  code, pre, .font-mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+}
+
+/* Subtle restrained animations for 7LayerX */
+@keyframes signal-sweep {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.85;
+  }
+  70% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes signal-flow {
+  0% {
+    stroke-dashoffset: 40;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulse-gentle {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.animate-signal-sweep {
+  animation: signal-sweep 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-signal-flow {
+  stroke-dasharray: 6 6;
+  animation: signal-flow 2s linear infinite;
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 4s ease-in-out infinite;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-signal-sweep,
+  .animate-signal-flow,
+  .animate-pulse-gentle {
+    animation: none !important;
+  }
+}
